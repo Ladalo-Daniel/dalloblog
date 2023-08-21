@@ -1,0 +1,72 @@
+.errorPage{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(252, 252, 252);
+    height: calc(100vh - 90px);
+    color: rgb(101, 84, 84);
+    flex-direction: column;
+    gap:3px;
+}
+
+.errorIcon{
+    font-size: 50px;
+    color: red;
+    margin-top: 0.5rem;
+
+}
+
+.tech{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.container{
+    margin-top: 1rem;
+    width: 200px;
+    height: 200px;
+    border: 3px solid rebeccapurple;
+    perspective: 200px;
+}
+
+.child{
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    transform: rotateX(145deg);
+    transition: all 3s ease;
+    animation: rotateAnimation 2s ease infinite;
+    color: black;
+    text-align: center;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotateX(145deg);
+    }
+    100% {
+        transform: rotateX(160deg);
+    }
+}
+
+/* .container:hover{
+    clip-path: polygon(0 50%, 20% 65%, 100% 100%, 0 80%);
+} */
+/* .container{
+    margin-top: 3rem;
+    width: 200px;
+    height: 200px;
+    background-color: rebeccapurple;
+    clip-path:polygon() ;clip-path: polygon(0 27%, 100% 65%, 100% 100%, 0 80%);
+    transition: all 2s ease;
+}
+
+.container:hover{
+    clip-path: polygon(0 50%, 20% 65%, 100% 100%, 0 80%);
+} */
+
+/* @keyframes rotate {
+    0%
+} */
