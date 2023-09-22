@@ -19,7 +19,7 @@
     justify-content: center;
 }
 
-.topIcon{
+.footerIcon{
     font-size: 20px;
     margin-right: 20px;
     color: #fefefe;
@@ -51,15 +51,19 @@
     color: white;
 
 }
-.topImg{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    cursor: pointer;
-    margin-left: 20px;
+
+@media screen and (max-width: 360px) {
+    .topIcon{
+        margin-right: 10px;
+        font-size: 15px;
+    }
+
+    .bottom{
+        width: 100vw;
+    }
 
 }
+
 
 
 

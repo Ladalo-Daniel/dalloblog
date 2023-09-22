@@ -1,6 +1,6 @@
 .write{
     padding-top: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     height: calc(100vh - 150px);
     background-color: whitesmoke;
     
@@ -9,7 +9,7 @@
 .writeImg{
     margin-left: 150px;
     width: 70vw;
-    height: 250px;
+    max-height: 300px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -19,7 +19,7 @@
 }
 
 .writeFormGroup{
-    margin-left: 150px;
+    margin-left: 20px;
     display: flex;
     align-items: center;
 }
@@ -70,4 +70,11 @@
     outline: none;
     cursor: pointer;
     border-radius: 9px;
+}
+
+@media screen and (max-width: 800px) {
+    .writeImg{
+        margin-left: 2rem;
+        height: fit-content;
+    }
 }

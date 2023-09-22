@@ -23,20 +23,40 @@ const bcrypt = require("bcrypt");
 
 
 //LOGIN
-router.post("/login", async (req, res) => {
-   try{
-    //Find user: !user return Invalid Credentiaals
-    const user = await User.findOne({username:req.body.username});
-    !user && res.status(500).json("Invalid Credentials");
-     
-    //Compare and check the password, !it doesnt tally, return invalid credentials
+router.post('/login', async (req, res) => {
+  try {
+    const user = await User.findOne({ username: req.body.username });
+    if (!user) {
+      res.status(400).json('Wrong credentials!');
+      return;
+    }
     const validated = await bcrypt.compare(req.body.password, user.password);
-    !validated && res.status(500).json("Invalid Credentials");
-     
-    //But if everything is okay, return success && user
-    res.status(200).json(user)
+    if (!validated) {
+      res.status(400).json('Wrong credentials!');
+      return;
+    }
+    const { password, ...others } = user._doc;
+    res.status(200).json(others);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-   } catch (err) {res.status(500).json(err)}
-})
+
+// router.post("/login", async (req, res) => {
+//    try{
+//     //Find user: !user return Invalid Credentiaals
+//     const user = await User.findOne({username:req.body.username});
+//     !user && res.status(500).json("Invalid Credentials");
+     
+//     //Compare and check the password, !it doesnt tally, return invalid credentials
+//     const validated = await bcrypt.compare(req.body.password, user.password);
+//     !validated && res.status(500).json("Invalid Credentials");
+     
+//     //But if everything is okay, return success && user
+//     res.status(200).json(user)
+
+//    } catch (err) {res.status(500).json(err)}
+// })
 
 module.exports = router

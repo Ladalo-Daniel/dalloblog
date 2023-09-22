@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <div className='bottom'>
     <div className="topLeft">
-    <i className="topIcon fa-brands fa-square-facebook"></i>
-    <i className="topIcon fa-brands fa-square-twitter"></i>
-    <i className="topIcon fa-brands fa-square-pinterest"></i>
-    <i className="topIcon fa-brands fa-square-instagram"></i>
+    <i className="footerIcon fa-brands fa-square-facebook"></i>
+    <i className="footerIcon fa-brands fa-square-twitter"></i>
+    <i className="footerIcon fa-brands fa-square-pinterest"></i>
+    <i className="footerIcon fa-brands fa-square-instagram"></i>
     </div>
     <div className="topCenter">
       <ul className="topList">

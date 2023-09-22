@@ -1,26 +1,35 @@
 import "./post.css"
 import img1 from "../../img/1.jpg"
+import { Link } from "react-router-dom"
+import { useEffect, useRef, useState } from "react";
+import LazyLoadedImage from "../lazyloadimage/LazyLoadingImg";
 
 
-export default function Post() {
+export default function Post({src, post }) {
+  const PF = "http://localhost:5000/images/";
+
   return (
     <div className="post">
-        <img className="postImg" src={img1} alt="" />
+        {post.photo &&  <LazyLoadedImage src={PF + post.photo} />}
+
         <div className="postInfo">
             <div className="postCats">
-                <span className="postCat">Music</span>
-                <span className="postCat">Life</span>
+              {post.categories.map(cat => (
+                <span className="postCat">{cat.name}</span>
+              ))}
             </div>
-            <span className="postTitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+            <Link to={`/post/${post._id}`} className="navLinks">
+            <span className="postTitle">{post.title}</span>
+            </Link>
             <hr />
-            <span className="postDate">1 hour ago</span>
+            <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
         </div>
-        <p className="postDesc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolor quis perspiciatis harum unde, ducimus, nostrum soluta modi obcaecati adipisci minima consequuntur consectetur pariatur, maxime accusamus provident nulla non at.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolor quis perspiciatis harum unde, ducimus, nostrum soluta modi obcaecati adipisci minima consequuntur consectetur pariatur, maxime accusamus provident nulla non at.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolor quis perspiciatis harum unde, ducimus, nostrum soluta modi obcaecati adipisci minima consequuntur consectetur pariatur, maxime accusamus provident nulla non at.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolor quis perspiciatis harum unde, ducimus, nostrum soluta modi obcaecati adipisci minima consequuntur consectetur pariatur, maxime accusamus provident nulla non at.
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos dolor quis perspiciatis harum unde, ducimus, nostrum soluta modi obcaecati adipisci minima consequuntur consectetur pariatur, maxime accusamus provident nulla non at.
+        <p className="postDesc">{post.desc}
         </p>
     </div>
   )
 }
+
+/*
+
+*/

@@ -1,0 +1,14 @@
+
+.floatButton{
+    padding: 20px;
+    width: 110px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 40px;
+    float: right;
+    border: none;
+}
+
+.fas{
+  font-size: 20px;
+}

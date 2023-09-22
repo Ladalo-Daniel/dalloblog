@@ -12,7 +12,7 @@ export default function Error() {
        <i className=" errorIcon fa-solid fa-triangle-exclamation"></i>
        <h1>Oops! Working on the Page...</h1>
        <img className="tech" src={tech} alt="" />
-       <button className=' topListItem' onClick={goBack}>Back</button>
+       <button className=' errorButton' onClick={goBack}>Back</button>
        <div className="container">
           <div className="child">LADALO</div>
        </div>

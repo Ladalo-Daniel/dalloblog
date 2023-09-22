@@ -1,5 +1,6 @@
 .settings {
     display: flex;
+    margin-bottom: 4rem;
   }
   
   .settingsWrapper {
@@ -98,4 +99,14 @@
   
   .settingsSubmitButton:hover {
     background-color: rgb(27, 36, 137);
+  }
+
+  @media screen and (max-width:800px) {
+    .settingsTitleUpdate{
+      font-size: 17px;
+    }
+
+    .settingsTitleDelete{
+      font-size: 13px;
+    }
   }

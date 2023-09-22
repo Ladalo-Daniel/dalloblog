@@ -4,3 +4,9 @@
     flex-wrap: wrap;
     margin-top: 20px;
 }
+
+@media screen and (max-width: 360px) {
+    .posts{
+        width: 300px;
+    }
+}

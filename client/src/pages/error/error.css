@@ -7,6 +7,7 @@
     color: rgb(101, 84, 84);
     flex-direction: column;
     gap:3px;
+    margin-bottom: 5rem;
 }
 
 .errorIcon{
@@ -42,12 +43,32 @@
     text-align: center;
 }
 
+.errorButton{
+    background-color: red;
+    color: white;
+    border-radius: 9px;
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    padding: 7px;
+}
+
+.errorButton:hover{
+    background-color: rgb(225, 19, 19);
+}
+
 @keyframes rotateAnimation {
     0% {
         transform: rotateX(145deg);
     }
     100% {
         transform: rotateX(160deg);
+    }
+}
+
+@media screen and (max-width:800px) {
+    h1{
+        font-size: 15px;
     }
 }
 

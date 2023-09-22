@@ -11,19 +11,30 @@
     z-index: 999;
 }
 
-.topLeft, .topRight{
-    flex: 3;
+.topLeft{
+  flex: 2;
+  align-items:center;
+  justify-content: flex-start;
+}
+
+ .topRight{
+    flex: 4;
     display: flex;
-    align-items: center;
+    align-items: self-start;
     justify-content: center;
 }
 
+.topIconContainer{
+}
+
 .topIcon{
-    font-size: 20px;
+    font-size: 30px;
     margin-right: 20px;
     color: #cbd0dc;
     cursor: pointer;
+    display: none;
 }
+
 
 .topCenter{
     flex: 6;
@@ -31,6 +42,14 @@
 
 .topList{
     display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    list-style: none;
+}
+
+.topListAccount{
+  display: flex;
     margin: 0;
     padding: 0;
     justify-content: center;
@@ -52,6 +71,7 @@
 
 
 }
+
 .topImg{
     width: 40px;
     height: 40px;
@@ -59,8 +79,141 @@
     object-fit: cover;
     cursor: pointer;
     margin-left: 20px;
+    margin-right: 20px;
 
 }
+
+.topSearchInput{
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline: none;
+  margin-right: 20px;
+  width: 200px;
+
+}
+
+
+@media screen and (max-width: 960px) {
+  NavbarItems {
+    position: relative;
+  }
+
+  .topList {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 90vh;
+    position: absolute;
+    top: 50px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .topList.active {
+    background: #101c4f;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .topListItem {
+    text-align: start;
+    padding: 1rem;
+    width: 100%;
+    display: table;
+    font-size: 40px;
+  }
+
+  .topListItem:hover {
+    background-color: #142435;
+    border-radius: 0;
+  }
+
+
+
+  .topImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 7px;
+  }
+
+
+  .topIcon{
+    margin-left: 10px;
+    display: block;
+    font-size: 25px;
+  }
+
+  .topSearchInput{
+    margin-left: 10px;
+    width: 100px;
+  }
+
+  h3{
+    margin-left: 5px;
+  }
+}
+
+/* Media query for screens smaller than 768px (e.g., smartphones) */
+@media (max-width: 768px) {
+    /* .topLeft {
+      align-items: flex-start;
+    }
+  
+    .topLeft {
+      margin-bottom: 10px;
+    }
+
+    .topCenter{
+        display: none;
+    } */
+  
+    /* .topCenter {
+      display: ${searchInput ? "block" : "none"};
+      margin-bottom: 10px;
+    } */
+  
+    .topSearchIcon {
+      display: block;
+    }
+  }
+
+
+/* Media query for screens smaller than 400px */
+@media (max-width: 399px) {
+    /* Your styles for screens smaller than 400px here */
+    .topLeft{
+        display: none;
+    }
+  }
+
+
+/* Media query for screens smaller than 768px (e.g., smartphones) */
+@media (max-width: 768px) {
+    .topLeft{
+        display: none;
+    }
+  }
+  
+  /* Media query for screens between 768px and 1024px (e.g., tablets) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    body {
+      font-size: 18px;
+    }
+  }
+  
+  /* Media query for screens larger than 1024px (e.g., desktops) */
+  @media (min-width: 1024px) {
+    body {
+      font-size: 20px;
+    }
+  }
 
 
 
