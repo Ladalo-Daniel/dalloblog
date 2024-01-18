@@ -67,7 +67,7 @@ export default function Register() {
             placeholder="Enter your password..."
             onChange={e => setPassword(e.target.value)}
              />
-            <button className="registerButton" type="submit">Register</button>
+            <button className="registerButton" type="submit">{success ? "Registering..." : "Register"}</button>
             {error ? <span style={{color:"red", marginTop:"10px"}}>Something went Wrong</span> : success && <span style={{color:"green", marginTop:"10px"}}>Registration Successful...</span>}
         </form>
         <span>You don't have Account?</span>

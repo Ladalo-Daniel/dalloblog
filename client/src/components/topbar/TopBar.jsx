@@ -61,7 +61,7 @@ const closeMobileMenu = () => {
           <li className=' topListItem'><NavLink className={({isActive}) => isActive? "activeLink" : "navLinks"} to="/" onClick={closeMobileMenu}>Home</NavLink></li>
           <li className=' topListItem'><NavLink className={({isActive}) => isActive? "activeLink" : "navLinks"} to="/about" onClick={closeMobileMenu}>About</NavLink></li>
           <li className=' topListItem'><NavLink className={({isActive}) => isActive? "activeLink" : "navLinks"} to="/error" onClick={closeMobileMenu}>Contact</NavLink></li>
-          <li className=' topListItem'><NavLink className={({isActive}) => isActive? "activeLink" : "navLinks"} to="/write" onClick={closeMobileMenu}>Write</NavLink></li>
+          <li className=' topListItem'><NavLink className={({isActive}) => isActive? "activeLink" : "navLinks"} to="/write" onClick={closeMobileMenu}>DropUpdate</NavLink></li>
          {!user && <li className=' topListItem'><NavLink className="navLinks" to="/register" onClick={closeMobileMenu}>Register</NavLink></li>}
           <li className=' topListItem' onClick={handleLogout} > {user && "Logout"} </li>
         </ul>

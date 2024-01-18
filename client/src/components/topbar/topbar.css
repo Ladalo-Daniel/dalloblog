@@ -113,6 +113,10 @@
     transition: all 0.5s ease;
   }
 
+  .activeLink{
+    border-bottom: 1px solid white;
+  }
+
   .topList.active {
     background: #101c4f;
     left: 0;
